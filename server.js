@@ -1,6 +1,6 @@
 const express = require('express')
 const mongoose = require("mongoose")
-const Workout = require("./Workout")
+const db = require("./models")
 const logger = require('morgan')
 const path = require('path')
 
@@ -19,18 +19,8 @@ app.use(express.static("public"))
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", { useNewUrlParser: true })
 
-
-let data = ['1', '2', 3]
-
-Workout.create({ data }).then(function (dblib) {
-    console.log(dblib)
-})
-
-
-app.get("/stats", function (req, res) {
-    res.sendFile(path.join(__dirname, "public/stats.html"))
-
-})
+require('./routes/htmlRoutes.js')(app)
+require('./routes/apiRoutes.js')(app)
 
 
 
