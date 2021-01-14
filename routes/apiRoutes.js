@@ -59,13 +59,13 @@ module.exports = function (app) {
     app.put("/api/workouts/:id", function (req, res) {
         console.log(req.body, "line26APi")
         db.User.find({ _id: req.params.id }).then(function (response) {
-            let count = 0
+            let count = req.body.duration
             console.log(response[0].exercises, "line61API")
             for (let i = 0; i < response[0].exercises.length; i++) {
                 count += response[0].exercises[i].duration
             }
             console.log(count)
-
+            if (count === 0) { count = req.body.duration }
 
             db.User.update({
                 _id: req.params.id
@@ -87,8 +87,6 @@ module.exports = function (app) {
 
 
         })
-
-
 
 
 
