@@ -12,7 +12,7 @@ async function initWorkout() {
       numExercises: lastWorkout.exercises.length,
       ...tallyExercises(lastWorkout.exercises)
     };
-    
+
     renderWorkoutSummary(workoutSummary);
   } else {
     renderNoWorkoutText()
@@ -68,7 +68,7 @@ function renderWorkoutSummary(summary) {
 
     container.appendChild(p);
   });
-  
+
 
 }
 

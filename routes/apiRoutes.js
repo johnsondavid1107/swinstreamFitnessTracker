@@ -9,43 +9,10 @@ module.exports = function (app) {
     app.get("/api/workouts", function (req, res) {
 
         db.User.find({}).sort({}).then(function (response) {
-
-            const newObj = {
-                ...response
-            }
-            newObj.count = 10
-
-            // console.log(response)
-            // console.log(newObj)
-
-            // console.log(response)
             res.json(response)
-
-
-
-
-
-            // console.log(response[0].exercises[0].duration, "line13API")
-            // console.log(response.length, "line 14")
-
-
-
         })
 
-
-
     })
-    //can delete may not need
-    // app.get("/exercise/:id", function (req, res) {
-    //     console.log(req.params.id, "line17API")
-    //     db.User.find({
-    //         _id: req.params.id
-    //     }).then(function (response) {
-
-    //         res.json(response)
-    //     })
-
-    // })
 
     app.post("/api/workouts", function (req, res) {
 
@@ -60,7 +27,7 @@ module.exports = function (app) {
         console.log(req.body, "line26APi")
         db.User.find({ _id: req.params.id }).then(function (response) {
             let count = req.body.duration
-            console.log(response[0].exercises, "line61API")
+            console.log(response[0].exercises, "line63API")
             for (let i = 0; i < response[0].exercises.length; i++) {
                 count += response[0].exercises[i].duration
             }
@@ -78,7 +45,7 @@ module.exports = function (app) {
                         totalDuration: count
                     }
                 }).then(function (response) {
-                    console.log(req.body, "line68")
+                    console.log(req.body, "line81APi")
 
                 })
 
@@ -92,6 +59,13 @@ module.exports = function (app) {
 
 
 
+    })
+
+
+    app.get("/api/workouts/range", function (req, res) {
+        db.User.find({}).then(function (response) {
+            res.json(response)
+        })
     })
 
     // app.get("/exercise?:id", function (req, res) {

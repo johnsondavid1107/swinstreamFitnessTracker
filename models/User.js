@@ -20,6 +20,9 @@ const UserSchema = new Schema([{
         distance: {
             type: Number
         },
+        weight: {
+            type: Number
+        },
         reps: {
             type: Number
         },
