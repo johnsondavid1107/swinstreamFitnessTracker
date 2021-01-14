@@ -27,11 +27,11 @@ module.exports = function (app) {
         console.log(req.body, "line26APi")
         db.User.find({ _id: req.params.id }).then(function (response) {
             let count = req.body.duration
-            console.log(response[0].exercises, "line63API")
+            // console.log(response[0].exercises, "line30API")
             for (let i = 0; i < response[0].exercises.length; i++) {
                 count += response[0].exercises[i].duration
             }
-            console.log(count)
+            // console.log(count)
             if (count === 0) { count = req.body.duration }
 
             db.User.update({
@@ -45,7 +45,7 @@ module.exports = function (app) {
                         totalDuration: count
                     }
                 }).then(function (response) {
-                    console.log(req.body, "line81APi")
+                    // console.log(req.body, "line81APi")
 
                 })
 
@@ -63,7 +63,8 @@ module.exports = function (app) {
 
 
     app.get("/api/workouts/range", function (req, res) {
-        db.User.find({}).then(function (response) {
+        db.User.find().sort({ day: 1 }).then(function (response) {
+            console.log(response[1], "line67API")
             res.json(response)
         })
     })
