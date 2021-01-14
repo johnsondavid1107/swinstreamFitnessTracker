@@ -2,9 +2,10 @@ const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
 
-const UserSchema = new Schema({
+const UserSchema = new Schema([{
     day: {
         type: Date,
+        default: Date.now
     },
     exercises: [{
         type: {
@@ -24,10 +25,15 @@ const UserSchema = new Schema({
         },
         sets: {
             type: Number
-        }
-    }]
+        },
 
-});
+    }],
+    totalDuration: {
+        type: Number,
+        default: 0
+    }
+
+}]);
 
 const User = mongoose.model("User", UserSchema);
 

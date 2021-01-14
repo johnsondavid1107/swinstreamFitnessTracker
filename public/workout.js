@@ -12,7 +12,7 @@ async function initWorkout() {
       numExercises: lastWorkout.exercises.length,
       ...tallyExercises(lastWorkout.exercises)
     };
-
+    
     renderWorkoutSummary(workoutSummary);
   } else {
     renderNoWorkoutText()
@@ -60,7 +60,6 @@ function renderWorkoutSummary(summary) {
   Object.keys(summary).forEach(key => {
     const p = document.createElement("p");
     const strong = document.createElement("strong");
-
     strong.textContent = workoutKeyMap[key];
     const textNode = document.createTextNode(`: ${summary[key]}`);
 
@@ -69,6 +68,8 @@ function renderWorkoutSummary(summary) {
 
     container.appendChild(p);
   });
+  
+
 }
 
 function renderNoWorkoutText() {
