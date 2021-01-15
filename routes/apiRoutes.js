@@ -1,6 +1,6 @@
 const db = require("../models")
-const User = require("../models/User")
-const { count } = require("../models/User")
+
+
 
 
 module.exports = function (app) {
@@ -45,7 +45,7 @@ module.exports = function (app) {
                         totalDuration: count
                     }
                 }).then(function (response) {
-                    // console.log(req.body, "line81APi")
+                    res.json(response)
 
                 })
 
@@ -61,26 +61,14 @@ module.exports = function (app) {
 
     })
 
-
+    //need to send workouts for the day below
     app.get("/api/workouts/range", function (req, res) {
-        db.User.find().sort({ day: 1 }).then(function (response) {
-            console.log(response[1], "line67API")
+        db.User.find({}).then(function (response) {
+            console.log(response, "line67API")
             res.json(response)
         })
     })
 
-    // app.get("/exercise?:id", function (req, res) {
-    //     console.log(req.params.id, "line42")
-    //     Workout.find({}).then(function (response) {
-    //         res.json(response)
-
-    //     })
-
-    // })
-
-    // app.get("/stats", function (req, res) {
-    //     res.sendFile(path.join(__dirname, "public/stats.html"))
-
-    // })
+    // app.get("/exercise?:id", function 
 
 }

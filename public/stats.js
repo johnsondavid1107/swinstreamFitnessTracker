@@ -24,7 +24,7 @@ function generatePalette() {
 function populateChart(data) {
   console.log(data)
   let durations = data.map(({ totalDuration }) => totalDuration);
-
+  console.log(durations)
   let pounds = calculateTotalWeight(data);
 
   let workouts = workoutNames(data);
@@ -48,6 +48,7 @@ function populateChart(data) {
 
   const labels = data.map(({ day }) => {
     const date = new Date(day);
+    console.log(date.getDay())
     return daysOfWeek[date.getDay()];
   });
 
@@ -201,7 +202,7 @@ function workoutNames(data) {
   data.forEach((workout) => {
     workout.exercises.forEach((exercise) => {
       workouts.push(exercise.name);
-      console.log(workouts)
+
     });
   });
 
