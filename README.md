@@ -20,3 +20,6 @@ need to use npm seed command to seed database, rewatch mongoose
 create database in robo3t called workout
 
 Check HTML docs for all anchor tags
+
+
+
