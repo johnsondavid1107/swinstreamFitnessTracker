@@ -1,25 +1,30 @@
 # swinstreamFitnessTracker
 
 
-I see something for an api route to /api/workouts and /api/workouts/range that needs to be built in Server.js
-also found /excercise?']" route and /excercise?id=#
+# The What!
+H!  This is a great fitness tracker app.  You can use this app to track all of your fitness adventures.  Open the app to start a workout.  Once the workoug has been entered, you have the option to complete the workout, or continue it.  Continuing the workout will compile the totals of Weight, Sets, Reps Duration, and Distance.  Click on the Dashboard to have a visual representation of your workouts by day, up to the last 7 days!  
 
-There is no server.js file
+# The How?
+This applicaiton uses Mongo Atlas to house data in the database.  The appliaiton uses Mongoose, Node, MongoDB and Express to Bootstrap to style.  The app is deployed on Heroku to funciton properly.  
+
+# The Why?
+
+For the fitness buffs who like to measure progress.  Hit the weights!  
+
+# The Where?
+
+Try the app out here!  https://swinstream-fitness-tracker.herokuapp.com/.
+
+<img src="./public/fitness.png" alt="burgerPic">
+
+# The Who
+
+This applicaiton is maintained by myself.  I can be reached for contributions, or questions here:
+
+johnsondavid1107@gmail.com
 
 
-Need to build a monog db
 
-Found lesson that mirrors hw.  It is lesson 07 Stu Mongo CRUD Tuesday class at 02:11:00
-
-After watching video, New Workout button on / route should call /excercise then /excercise?id **saw a route that was /id  need a /stats route
-
-Need to seed database with seeder
-
-need to use npm seed command to seed database, rewatch mongoose
-
-create database in robo3t called workout
-
-Check HTML docs for all anchor tags
 
 
 
